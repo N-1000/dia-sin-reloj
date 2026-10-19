@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día sin reloj</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="ambient" id="ambient" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+  </div>
+
+  <section class="hero" id="hero">
+    <h1 id="greeting">&nbsp;</h1>
+
+    <div id="nameAsk" class="name-ask hidden">
+      <p>¿cómo te llamas?</p>
+      <input type="text" id="nameInput" placeholder="tu nombre" autocomplete="off">
+      <button id="nameSkip" class="link-btn">omitir</button>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint" aria-hidden="true">⌄</div>
+  </section>
+
+  <section class="pause-section intro-section" data-block="intro" id="introSection">
+    <div class="pause-inner">
+      <p class="intro-line">sin relojes. sin rachas. sin minutos en rojo.</p>
+      <p class="intro-line intro-line-sub">tres momentos tranquilos — eso es todo lo que hay que llenar hoy.</p>
+    </div>
+  </section>
+
+  <section class="block-section" data-block="mañana" id="section-mañana">
+    <div class="block-inner">
+      <h2>mañana</h2>
+      <p class="block-phrase">hoy se empieza con calma.</p>
+      <ul class="task-list" id="list-mañana"></ul>
+      <input type="text" class="add-input" data-block="mañana" placeholder="+ agregar tarea">
+    </div>
+  </section>
+
+  <section class="block-section" data-block="tarde" id="section-tarde">
+    <div class="block-inner">
+      <h2>tarde</h2>
+      <p class="block-phrase">con una cosa marcada, este momento ya cuenta.</p>
+      <ul class="task-list" id="list-tarde"></ul>
+      <input type="text" class="add-input" data-block="tarde" placeholder="+ agregar tarea">
+    </div>
+  </section>
+
+  <section class="block-section" data-block="noche" id="section-noche">
+    <div class="block-inner">
+      <h2>noche</h2>
+      <p class="block-phrase">cierra el día. lo que falte, mañana empieza en blanco.</p>
+      <ul class="task-list" id="list-noche"></ul>
+      <input type="text" class="add-input" data-block="noche" placeholder="+ agregar tarea">
+    </div>
+  </section>
+
+  <section class="pause-section" data-block="respirar" id="breatheSection">
+    <div class="pause-inner" id="breatheIdle">
+      <button id="breatheBtn" class="link-btn big">respirar un minuto</button>
+    </div>
+    <div class="breathe-active hidden" id="breatheActive">
+      <div class="breathe-circle"></div>
+      <p class="breathe-timer" id="breatheTimer">1:00</p>
+      <p class="breathe-hint" id="breatheHint">inhala... exhala...</p>
+      <div id="breatheExtend" class="hidden">
+        <p>¿un minuto más?</p>
+        <button id="breatheMore" class="link-btn">sí</button>
+        <button id="breatheDone" class="link-btn">listo</button>
+      </div>
+      <button id="breatheClose" class="link-btn small">cerrar</button>
+    </div>
+  </section>
+
+  <section class="pause-section" data-block="cierre" id="closeSection">
+    <div class="pause-inner" id="closeIdle">
+      <button id="closeDayBtn" class="link-btn big">cerrar el día</button>
+    </div>
+    <p id="closeMessage" class="close-message hidden"></p>
+  </section>
+
+  <footer class="app-footer">
+    <p class="trust-line">tus marcas se guardan solo en tu navegador. no pedimos datos.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
